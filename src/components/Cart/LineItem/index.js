@@ -1,7 +1,10 @@
 import React, { useContext } from 'react'
 
 import StoreContext from '~/context/StoreContext'
-import { Wrapper } from './styles'
+import {
+  Wrapper,
+  RemoveLineItem,
+} from './styles'
 
 const LineItem = props => {
   const { line_item } = props
@@ -40,7 +43,9 @@ const LineItem = props => {
       </p>
       {selectedOptions}
       {line_item.quantity}
-      <button onClick={handleRemove}>Remove</button>
+      <RemoveLineItem
+        onClick={handleRemove}
+      />
     </Wrapper>
   )
 }

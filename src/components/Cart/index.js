@@ -2,6 +2,13 @@ import React, { useContext } from 'react'
 
 import StoreContext from '~/context/StoreContext'
 import LineItem from './LineItem'
+import {
+  TwoColumnGrid,
+  GridLeft,
+  GridRight,
+  Heading,
+  Button
+} from './styles'
 
 const Cart = () => {
   const {
@@ -18,19 +25,28 @@ const Cart = () => {
   })
 
   return (
-    <div>
-      {line_items}
-      <h2>Subtotal</h2>
-      <p>$ {checkout.subtotalPrice}</p>
-      <br />
-      <h2>Taxes</h2>
-      <p>$ {checkout.totalTax}</p>
-      <br />
-      <h2>Total</h2>
-      <p>$ {checkout.totalPrice}</p>
-      <br />
-      <button onClick={handleCheckout} disabled={checkout.lineItems.length === 0}>Check out</button>
-    </div>
+    <TwoColumnGrid>
+      <GridLeft>
+        {line_items}
+      </GridLeft>
+      <GridRight>
+        <Heading>Subtotal</Heading>
+        <p>R {checkout.subtotalPrice}</p>
+        <br />
+        <Heading>Taxes</Heading>
+        <p>R {checkout.totalTax}</p>
+        <br />
+        <Heading>Total</Heading>
+        <p>R {checkout.totalPrice}</p>
+        <br />
+        <Button
+          onClick={handleCheckout}
+          disabled={checkout.lineItems.length === 0}
+        >
+          Check out
+        </Button>
+      </GridRight>
+    </TwoColumnGrid>
   )
 }
 

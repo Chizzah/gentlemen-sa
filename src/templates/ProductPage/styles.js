@@ -1,4 +1,34 @@
-import styled from '@emotion/styled'
+import { styled } from 'linaria/react'
+
+export const Container = styled.section`
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 0;
+`
+
+export const TwoColumnGrid = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 3rem 1fr;
+  grid-template-rows: 1auto;
+  grid-template-areas: "left . right";
+  padding: 6rem;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px 4px #ccc;
+  -moz-box-shadow: 3px 3px 5px 4px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 4px #ccc;
+
+  @media (max-width: 992px){
+    display: block;
+  }
+`
+
+export const GridLeft = styled.div`
+  grid-area: left;
+`
+
+export const GridRight = styled.div`
+  grid-area: right;
+`
 
 export const ProductTitle = styled.h1`
   font-size: 2.25rem;
@@ -10,8 +40,6 @@ export const ProductTitle = styled.h1`
   line-height: 1.4;
 `
 
-export const ProductDescription = styled.div`
-  margin-top: 40px;
-  font-family: "Helvetica","Helvetica",sans-serif;
-  font-weight: 300;
+export const GalleryContainer = styled.div`
+  width: 480px;
 `

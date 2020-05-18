@@ -1,10 +1,16 @@
-const path = require(`path`)
-
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  return graphql(`
+
+  const result = await graphql(`
     {
-      allShopifyProduct {
+      product: allShopifyProduct {
+        edges {
+          node {
+            handle
+          }
+        }
+      }
+      collection: allShopifyCollection {
         edges {
           node {
             handle
@@ -12,17 +18,33 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then(result => {
-    result.data.allShopifyProduct.edges.forEach(({ node }) => {
-      createPage({
-        path: `/product/${node.handle}/`,
-        component: path.resolve(`./src/templates/ProductPage/index.js`),
-        context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
-          handle: node.handle,
-        },
-      })
+  `)
+
+  const productTemplate = require.resolve(`./src/templates/ProductPage/index.js`)
+  const collectionTemplate = require.resolve('./src/templates/CollectionPage/index.js')
+
+  if (result.errors) {
+    return
+  }
+  
+  result.data.product.edges.forEach(product => {
+    
+    createPage({
+      path: `/product/${product.node.handle}/`,
+      component: productTemplate,
+      context: {
+        handle: product.node.handle,
+      },
+    })
+  })
+  
+  result.data.collection.edges.forEach(collection => {
+    createPage({
+      path: `/collection/${collection.node.handle}/`,
+      component: collectionTemplate,
+      context: {
+        handle: collection.node.handle,
+      },
     })
   })
 }

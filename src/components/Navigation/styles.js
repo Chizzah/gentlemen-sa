@@ -1,47 +1,87 @@
-import styled from '@emotion/styled'
-import { Link } from 'gatsby'
+import { styled } from 'linaria/react'
 
-import { breakpoints } from '../../utils/styles'
-
-export const Wrapper = styled.div`
-  background: rebeccapurple;
-  margin-bottom: 1.45rem;
+export const Wrapper = styled.nav`
+  background-color:  var(--primary);
 `
 
-export const Container = styled.div`
+export const Container = styled.ul`
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   padding: 1.45rem;
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1280px;
 `
 
-export const MenuLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: bold;
-
-  @media (max-width: ${breakpoints.s}px){
+export const Brand = styled.h2`
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--brand);
+  text-transform: uppercase;
+  @media (max-width: 576px){
     font-size: 1.4rem
   }
 `
 
-export const CartCounter = styled.span`
-  background-color: white;
-  color: #663399;
-  border-radius: 20px;
-  padding: 0 10px;
-  font-size: 1.2rem;
-  float: right;
-  margin: -10px;
-  z-index: 20;
+export const Menu = styled.ul`
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+
+  & > li {
+    padding: 0 0.75rem;
+  }
+
+  & > li > a:hover {
+    color: var(--brand);
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `
 
+export const DropdownContent = styled.li`
+  display: none;
+  position: absolute;
+  background-color: var(--primary);
+  min-width: 220px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
+  padding: 30px 0 12px 12px;
+  text-transform: capitalize;
+  z-index: 999;
+
+  & > a {
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  & > a:hover {
+    color: var(--brand);
+  }
+`
+
+export const Dropdown = styled.ul`
+  position: relative;
+  display: inline-block;
+  color: var(--secondary);
+  cursor: pointer;
     
-     
-        
-          
-            
-              
+  &:hover ${DropdownContent} {
+    display: flex;
+    flex-direction: column;
+  }
+`
+
+export const CartCounter = styled.span`
+  background-color: var(--secondary);
+  color: var(--brand);
+  border-radius: 20px;
+  padding: 0 6px;
+  font-size: 1.2rem;
+  float: right;
+  margin: auto;
+  z-index: 20;
+`

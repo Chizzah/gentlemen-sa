@@ -3,16 +3,14 @@ import { graphql } from 'gatsby'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
+import Gallery from '~/components/Gallery'
 import {
-  Img,
   Container,
   TwoColumnGrid,
   GridLeft,
   GridRight,
-} from '~/utils/styles'
-import {
   ProductTitle,
-  ProductDescription
+  GalleryContainer
 } from './styles'
 
 const ProductPage = ({ data }) => {
@@ -23,19 +21,17 @@ const ProductPage = ({ data }) => {
       <Container>
         <TwoColumnGrid>
           <GridLeft>
-            {product.images.map(image => (
-              <Img
-                fluid={image.localFile.childImageSharp.fluid}
-                key={image.id}
-                alt={product.title}
+          <GalleryContainer>
+              <Gallery
+                image1={product.images[0].localFile.childImageSharp.fluid}
+                image2={product.images[1].localFile.childImageSharp.fluid}
+                image3={product.images[2].localFile.childImageSharp.fluid}
               />
-            ))}
+          </GalleryContainer>
           </GridLeft>
           <GridRight>
             <ProductTitle>{product.title}</ProductTitle>
-            <ProductDescription
-              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-            />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra purus in felis aliquet, quis finibus metus faucibus. Sed bibendum erat sed magna elementum placerat.</p>
             <ProductForm product={product} />
           </GridRight>
         </TwoColumnGrid>
@@ -85,7 +81,7 @@ export const query = graphql`
         id
         localFile {
           childImageSharp {
-            fluid(maxWidth: 910) {
+            fluid(maxWidth: 800, srcSetBreakpoints: [400]) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }

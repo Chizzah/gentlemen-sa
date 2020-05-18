@@ -1,7 +1,5 @@
-import React from 'react'
-import Image from 'gatsby-image'
-import styled from '@emotion/styled'
-import { Global, css } from "@emotion/core"
+import { css } from 'linaria'
+import { styled } from 'linaria/react'
 
 export const breakpoints = {
   s: 576,
@@ -10,64 +8,172 @@ export const breakpoints = {
   xl: 1200,
 }
 
-export const GlobalStyle = props => (
-  <Global
-    {...props}
-    styles={css`
-      body {
-        margin: 0;
-      }
-      html {
-        font-family: sans-serif;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-      }
-    `}
-  />
-)
+export const GlobalStyle = css`
+  :global() {
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-export const Img = styled(Image)`
-  max-width: 100 %;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-`
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
 
-export const Container = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-`
+    body {
+      --brand: #A08D7C;
+      --primary: #000;
+      --secondary: #F7FAFC;
+      --accent: #CBD5E0;
+    }
 
-export const TwoColumnGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2rem 1fr;
-  grid-template-rows: 1auto;
-  grid-template-areas: "left . right";
+    a {
+      text-decoration: none;
+      color: var(--secondary);
+    }
 
-  @media (max-width: ${breakpoints.l}px){
-    display: block;
+    ul {
+      list-style-type: none;
+    }
   }
-`
-
-export const GridLeft = styled.div`
-  grid-area: left;
-`
-
-export const GridRight = styled.div`
-  grid-area: right;
 `
 
 export const MainContent = styled.main`
   margin-top: 80px;
   margin-bottom: 40px;
 
-  @media (max-width: ${breakpoints.l}px){
+  @media (max-width: 992px){
     margin-top: 40px;
     margin-bottom: 20px;
   }
+`
+
+export const Container = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 6rem 0;
+`
+
+export const StyledBackground = css`
+  width: 100%;
+  height: 90vh;
+  background-position: 50% 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 1.5rem;
+  font-weight: 300;
+`
+
+export const HeroButton = css`
+  border: none;
+  background: var(--brand);
+  color: #f9f9f9;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+
+    &:hover {
+      color: var(--brand);
+      font-weight: 700;
+      letter-spacing: 3px;
+      background: none;
+      box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      transition: all 0.3s ease 0s;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+  @media(max-width: 576px) {
+    font-size: 1rem;
+  }
+`
+
+export const SectionButton = css`
+  border: 2px solid #f9f9f9;
+  background: transparent;
+  color: #f9f9f9;
+  font-size: 1.3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+
+    &:hover {
+      border: 1px solid #A08D7C;
+      color: var(--brand);
+      letter-spacing: 3px;
+      background: none;
+      box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      transition: all 0.3s ease 0s;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+  @media(max-width: 576px) {
+    font-size: 1rem;
+  }
+`
+
+export const HeroOverlay = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+`
+
+export const SectionOverlay = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.65);
+`
+
+export const InsideBorder = styled.div`
+  position: absolute;
+  width: 97%;
+  height: 93%;
+  margin: 0 auto;
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  z-index: -1;
+`
+
+export const CartContainer = styled.section`
+  width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+`
+
+export const CartTitle = styled.h1`
+  color: var(--primary);
+  margin: 2rem 0 3rem 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
 `
