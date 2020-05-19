@@ -35,11 +35,12 @@ const Navigation = ({ siteTitle }) => {
 						<Dropdown>
 							<span>Shop &dArr;</span>
 							<DropdownContent>
-								<Link to='/collection/shirts' activeStyle={{ color: '#A08D7C' }}>Shirts</Link>
-								<Link to='/collection/blazers' activeStyle={{ color: '#A08D7C' }}>Blazers</Link>
-								<Link to='/collection/shoes' activeStyle={{ color: '#A08D7C' }}>Shoes</Link>
-								<Link to='/collection/belts' activeStyle={{ color: '#A08D7C' }}>Belts</Link>
-								<Link to='/collection/suits' activeStyle={{ color: '#A08D7C' }}>Suits</Link>
+								<Link to='/all-collections' activeStyle={{ color: '#A08D7C' }}>All Collections</Link>
+								<Link to='/collection/shirts' activeStyle={{ color: '#A08D7C' }}>Shirts Collection</Link>
+								<Link to='/collection/blazers' activeStyle={{ color: '#A08D7C' }}>Blazers Collection</Link>
+								<Link to='/collection/shoes' activeStyle={{ color: '#A08D7C' }}>Shoes Collection</Link>
+								<Link to='/collection/belts' activeStyle={{ color: '#A08D7C' }}>Belts Collection</Link>
+								<Link to='/collection/suits' activeStyle={{ color: '#A08D7C' }}>Suits Collection</Link>
 							</DropdownContent>
     				</Dropdown>
 					</li>

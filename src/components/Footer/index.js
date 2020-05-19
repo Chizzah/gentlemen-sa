@@ -8,10 +8,12 @@ import {
   SocialIcons,
   GridRight,
   TwoColumnGridRight,
+  FooterNav,
   Title,
   Divider,
   Text,
-  StyledLink
+  StyledLink,
+  FootNote
 } from './styles'
 import Facebook from '../../../resources/icons/facebook.svg'
 import Instagram from '../../../resources/icons/instagram.svg'
@@ -32,39 +34,52 @@ function FooterComponent() {
           <br/><br/>
           <Link className={StyledLink} to='/about'>Find out more about us</Link>
           <SocialIcons>
-            <a href='#' target='_blank' rel='noopener noreferrer'><img src={Facebook} /></a>
-            <a href='#' target='_blank' rel='noopener noreferrer'><img src={Instagram} /></a>
-            <a href='#' target='_blank' rel='noopener noreferrer'><img src={Twitter} /></a>
-            <a href='#' target='_blank' rel='noopener noreferrer'><img src={Pinterest} /></a>
-            <a href='#' target='_blank' rel='noopener noreferrer'><img src={Youtube} /></a>
-            <a href='#' target='_blank' rel='noopener noreferrer'><img src={Whatsapp} /></a>
-            <a href='#' target='_blank' rel='noopener noreferrer'><img src={GooglePlus} /></a>
+            <a href='https://chaddwebdesign.co.za' target='_blank' rel='noopener noreferrer'><img src={Facebook} alt='Dummy Link 1' /></a>
+            <a href='https://chaddwebdesign.co.za' target='_blank' rel='noopener noreferrer'><img src={Instagram} alt='Dummy Link 2' /></a>
+            <a href='https://chaddwebdesign.co.za' target='_blank' rel='noopener noreferrer'><img src={Twitter} alt='Dummy Link 3' /></a>
+            <a href='https://chaddwebdesign.co.za' target='_blank' rel='noopener noreferrer'><img src={Pinterest} alt='Dummy Link 4' /></a>
+            <a href='https://chaddwebdesign.co.za' target='_blank' rel='noopener noreferrer'><img src={Youtube} alt='Dummy Link 5' /></a>
+            <a href='https://chaddwebdesign.co.za' target='_blank' rel='noopener noreferrer'><img src={Whatsapp} alt='Dummy Link 6' /></a>
+            <a href='https://chaddwebdesign.co.za' target='_blank' rel='noopener noreferrer'><img src={GooglePlus} alt='Dummy Link 7' /></a>
           </SocialIcons>
         </GridLeft>
         <GridRight>
           <TwoColumnGridRight>
             <GridLeft>
-              <Title>Test1</Title>
+              <Title>Navigation</Title>
               <Divider/>
-              <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur in massa eu tempus. Sed quis justo eget nibh ultrices eleifend sed eu nibh. Suspendisse potenti. Aliquam vehicula massa non luctus aliquam.</Text>
+              <FooterNav>
+                <ul>
+                  <li><Link to='/'>Home</Link></li>
+                  <li><Link to='/about'>About Us</Link></li>
+                  <li><Link to='/blog'>Our Blog</Link></li>
+                  <li><Link to='/contact'>Contact Us</Link></li>
+                  <li><Link to='/cart'>Shopping Cart</Link></li>
+                  <li><Link to='/policies'>Store Policies</Link></li>
+                </ul>
+              </FooterNav>
             </GridLeft>
             <GridRight>
-              <Title>Test2</Title>
+              <Title>Shop</Title>
               <Divider/>
-              <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur in massa eu tempus. Sed quis justo eget nibh ultrices eleifend sed eu nibh. Suspendisse potenti. Aliquam vehicula massa non luctus aliquam.</Text>
+              <FooterNav>
+                <ul>
+                  <li><Link to='/all-collections'>All Collections</Link></li>
+                  <li><Link to='/collection/shirts'>Shirts Collection</Link></li>
+                  <li><Link to='/collection/blazers'>Blazers Collection</Link></li>
+                  <li><Link to='/collection/shoes'>Shoes  Collection</Link></li>
+                  <li><Link to='/collection/belts'>Belts  Collection</Link></li>
+                  <li><Link to='/collection/suits'>Suits  Collection</Link></li>
+                </ul>
+              </FooterNav>
             </GridRight>
           </TwoColumnGridRight>
         </GridRight>
       </TwoColumnGrid>
-      <div
-        style={{ 
-          "backgroundColor": "#222",
-          "padding": "1rem 0"
-        }}
-      >
-        <p>Copyright © Gentlemen SA {new Date().getFullYear()}. All rights reserved.</p>
-        <p>JAMstack Website by <a href='https://chaddwebdesign.coza' target='_blank' rel='noopener noreferrer'>Chadd Web Design</a></p>
-      </div>
+      <FootNote>
+        <p>Copyright © <span>Gentlemen SA</span> {new Date().getFullYear()}. All rights reserved.</p>
+        <p>JAMstack Website by <a href='https://chaddwebdesign.co.za' target='_blank' rel='noopener noreferrer'>Chadd Web Design</a></p>
+      </FootNote>
     </Footer>
   )
 }

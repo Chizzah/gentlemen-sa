@@ -5,8 +5,8 @@ export const Footer = styled.footer`
   position: sticky;
   width: 100%;
   height: auto;
-  background-color: #111;
-  color: white;
+  background-color: #333;
+  color: var(--secondary);
 `
 
 export const TwoColumnGrid = styled.section`
@@ -42,12 +42,23 @@ export const GridRight = styled.div`
 
 export const TwoColumnGridRight = styled.section`
   display: grid;
-  grid-template-columns: 1fr 3rem 1fr;
+  grid-template-columns: 1fr 0.25rem 1fr;
   grid-template-areas: "left . right";
 `
 
+export const FooterNav = styled.nav`
+  & > ul > li {
+    padding: 0.5rem 0;
+
+  }
+
+  & > ul > li > a:hover {
+    color: var(--brand);
+  }
+`
+
 export const Title = styled.h3`
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   margin: 1rem 0;
   text-transform: uppercase;
@@ -57,11 +68,12 @@ export const Divider = styled.div`
   width: 1.5rem;
   height: auto;
   margin: 1rem 0;
-  border: 1px solid #fff;
+  background-color: var(--brand);
+  border: 1px solid var(--brand);
 `
 
 export const Text = styled.span`
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 300;
 `
 
@@ -72,4 +84,19 @@ export const StyledLink = css`
     &:hover {
       color: var(--accent);
     }
+`
+
+export const FootNote = styled.section`
+  width: 100;
+  height: auto;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #222;
+
+  & > p > span,
+  & > p > a {
+    color: var(--brand);
+  }
 `

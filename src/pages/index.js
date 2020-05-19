@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
           <Hero
             title='Gentlemen SA'
             text='Real men only'
-            link='/all'
+            link='/all-collections'
             button='Explore'
             class={ HeroButton }
           />
