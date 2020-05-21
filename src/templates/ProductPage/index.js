@@ -21,13 +21,13 @@ const ProductPage = ({ data }) => {
       <Container>
         <TwoColumnGrid>
           <GridLeft>
-          <GalleryContainer>
-              <Gallery
-                image1={product.images[0].localFile.childImageSharp.fluid}
-                image2={product.images[1].localFile.childImageSharp.fluid}
-                image3={product.images[2].localFile.childImageSharp.fluid}
-              />
-          </GalleryContainer>
+            <GalleryContainer>
+                <Gallery
+                  image1={product.images[0].localFile.childImageSharp.fluid}
+                  image2={product.images[1].localFile.childImageSharp.fluid}
+                  image3={product.images[2].localFile.childImageSharp.fluid}
+                />
+            </GalleryContainer>
           </GridLeft>
           <GridRight>
             <ProductTitle>{product.title}</ProductTitle>

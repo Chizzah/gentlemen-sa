@@ -4,6 +4,7 @@ import reduce from 'lodash/reduce'
 import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
+import Cart from '../../../resources/icons/cart.svg'
 import {
 	Wrapper,
 	Container,
@@ -55,7 +56,7 @@ const Navigation = ({ siteTitle }) => {
 								{quantity}
 							</CartCounter>
 						}
-							🛍
+							<img src={ Cart } alt='Cart icon' />
 					</Brand>
 				</Link>
 			</Container>

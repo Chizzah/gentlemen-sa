@@ -18,6 +18,11 @@ export const Brand = styled.h2`
   font-weight: 600;
   color: var(--brand);
   text-transform: uppercase;
+
+  & > img {
+    margin-right: 0.5rem;
+  }
+  
   @media (max-width: 576px){
     font-size: 1.4rem
   }
@@ -38,7 +43,7 @@ export const Menu = styled.ul`
     color: var(--brand);
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 576px) {
     display: none;
   }
 `

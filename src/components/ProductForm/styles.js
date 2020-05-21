@@ -34,43 +34,48 @@ export const Holder = styled.div`
 `
 
 export const MiniHolder = styled.div`
+  width: 24rem;
+  height: 2.5rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
     & > input {
-      padding: 13px;
+      display: inline-block;
+      width: 70%;
+      height: 100%;
       border: 1px solid #999;
 
       &:focus {
         outline: none;
       }
     }
+
+  @media (max-width: 576px) {
+    width: 16rem;
+  }
 `
 
 export const Button = styled.button`
+  width: 30%;
+  height: 100%;
   background-color: #000;
   color: #fff;
   border: none;
   font-size: 0.6rem;
   font-weight: 600;
-  padding: 16.5px;
   text-align: center;
   text-transform: uppercase;
   display: inline-block;
   transition: all 0.3s ease 0s;
   cursor: pointer;
 
-    &:hover {
-      background-color: #333;
-    }
+  &:hover {
+    background-color: #333;
+  }
 
-    &:focus {
-      outline: none;
-    }
-
-  @media(max-width: 576px) {
-    font-size: 0.4rem;
+  &:focus {
+    outline: none;
   }
 `

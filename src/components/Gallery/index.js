@@ -11,6 +11,7 @@ const Gallery = (props) => {
       prevEl: '.swiper-button-prev'
     }
   }
+
   return (
     <Swiper {...params}>
       <Image fluid={props.image1} />

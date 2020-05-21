@@ -162,6 +162,10 @@ export const InsideBorder = styled.div`
   margin: 0 auto;
   border: 0.5px solid rgba(255, 255, 255, 0.3);
   z-index: -1;
+
+  @media (max-width: 576px) {
+    width: 93%;
+  }
 `
 
 export const CartContainer = styled.section`
@@ -169,6 +173,12 @@ export const CartContainer = styled.section`
   min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
+
+  @media (max-width: 576px) {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
 `
 
 export const CartTitle = styled.h1`

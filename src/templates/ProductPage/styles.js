@@ -19,11 +19,16 @@ export const TwoColumnGrid = styled.section`
 
   @media (max-width: 992px){
     display: block;
+    padding: 3.5rem;
   }
 `
 
 export const GridLeft = styled.div`
   grid-area: left;
+
+  @media (max-width: 576px){
+    margin: 0 auto;
+  }
 `
 
 export const GridRight = styled.div`
@@ -42,4 +47,9 @@ export const ProductTitle = styled.h1`
 
 export const GalleryContainer = styled.div`
   width: 480px;
+
+  @media (max-width: 576px){
+    width: 300px;
+    margin-bottom: 3rem;
+  }
 `

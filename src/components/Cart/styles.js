@@ -28,6 +28,10 @@ export const GridRight = styled.div`
 	grid-area: right;
 	padding: 12rem 3rem;
 	background-color: #A08D7C;
+
+	@media (max-width: 992px){
+		padding: 1.5rem 1rem;
+	}
 `
 
 export const Heading = styled.h2`
@@ -65,7 +69,8 @@ export const Button = styled.button`
 			outline: none;
 		}
 
-	@media(max-width: 576px) {
-		font-size: 0.4rem;
+	@media (max-width: 576px) {
+		margin-top: 1.5rem
+		font-size: 0.8rem;
 	}
 `

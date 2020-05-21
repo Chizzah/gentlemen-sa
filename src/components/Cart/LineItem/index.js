@@ -3,7 +3,8 @@ import React, { useContext } from 'react'
 import StoreContext from '~/context/StoreContext'
 import {
   Wrapper,
-  RemoveLineItem,
+  InnerWrapper,
+  RemoveLineItem
 } from './styles'
 
 const LineItem = props => {
@@ -34,6 +35,7 @@ const LineItem = props => {
   return (
     <Wrapper>
       {variantImage}
+      <InnerWrapper>
       <p>
         {line_item.title}
         {`  `}
@@ -43,6 +45,8 @@ const LineItem = props => {
       </p>
       {selectedOptions}
       {line_item.quantity}
+      
+      </InnerWrapper>
       <RemoveLineItem
         onClick={handleRemove}
       />
