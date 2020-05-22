@@ -27,10 +27,10 @@ export const GlobalStyle = css`
     }
 
     body {
-      --brand: #A08D7C;
+      --brand: #a08d7c;
       --primary: #000;
-      --secondary: #F7FAFC;
-      --accent: #CBD5E0;
+      --secondary: #f7fafc;
+      --accent: #cbd5e0;
     }
 
     a {
@@ -48,7 +48,7 @@ export const MainContent = styled.main`
   margin-top: 80px;
   margin-bottom: 40px;
 
-  @media (max-width: 992px){
+  @media (max-width: 992px) {
     margin-top: 40px;
     margin-bottom: 20px;
   }
@@ -82,22 +82,22 @@ export const HeroButton = css`
   transition: all 0.3s ease 0s;
   cursor: pointer;
 
-    &:hover {
-      color: var(--brand);
-      font-weight: 700;
-      letter-spacing: 3px;
-      background: none;
-      box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-      -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-      -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-      transition: all 0.3s ease 0s;
-    }
+  &:hover {
+    color: var(--brand);
+    font-weight: 700;
+    letter-spacing: 3px;
+    background: none;
+    box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.3s ease 0s;
+  }
 
-    &:focus {
-      outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-  @media(max-width: 576px) {
+  @media (max-width: 576px) {
     font-size: 1rem;
   }
 `
@@ -114,22 +114,22 @@ export const SectionButton = css`
   transition: all 0.3s ease 0s;
   cursor: pointer;
 
-    &:hover {
-      border: 1px solid #A08D7C;
-      color: var(--brand);
-      letter-spacing: 3px;
-      background: none;
-      box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-      -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-      -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-      transition: all 0.3s ease 0s;
-    }
+  &:hover {
+    border: 1px solid #a08d7c;
+    color: var(--brand);
+    letter-spacing: 3px;
+    background: none;
+    box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.3s ease 0s;
+  }
 
-    &:focus {
-      outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-  @media(max-width: 576px) {
+  @media (max-width: 576px) {
     font-size: 1rem;
   }
 `

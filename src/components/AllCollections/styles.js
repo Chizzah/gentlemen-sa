@@ -8,7 +8,7 @@ export const Grid = styled.section`
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
 
-  @media (max-width: 576px){
+  @media (max-width: 576px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `
@@ -49,16 +49,16 @@ export const Button = styled.button`
   transition: all 0.3s ease 0s;
   cursor: pointer;
 
-    &:hover {
-      background-color: black;
-      color: #fff;
-    }
+  &:hover {
+    background-color: black;
+    color: #fff;
+  }
 
-    &:focus {
-      outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-  @media(max-width: 576px) {
+  @media (max-width: 576px) {
     font-size: 0.4rem;
   }
 `
