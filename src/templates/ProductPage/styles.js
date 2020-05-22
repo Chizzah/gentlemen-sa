@@ -19,7 +19,7 @@ export const TwoColumnGrid = styled.section`
 
   @media (max-width: 992px){
     display: block;
-    padding: 3.5rem;
+    padding: 1.5rem;
   }
 `
 
@@ -47,6 +47,7 @@ export const ProductTitle = styled.h1`
 
 export const GalleryContainer = styled.div`
   width: 480px;
+  margin: 0 auto;
 
   @media (max-width: 576px){
     width: 300px;
