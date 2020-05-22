@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
+import { Link } from 'gatsby'
 import reduce from 'lodash/reduce'
 import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
-import { Wrapper, Container, Brand, CartCounter } from './styles'
+import { Wrapper, Container, Brand, NavItems, CartCounter } from './styles'
 import CartIcon from '../../../resources/icons/cart.svg'
 
 const useQuantity = () => {
@@ -21,7 +22,23 @@ const Navigation = ({ siteTitle }) => {
   return (
     <Wrapper>
       <Container>
-        <Brand>{siteTitle}</Brand>
+        <Brand>
+          <Link to="/">{siteTitle}</Link>
+        </Brand>
+        <NavItems>
+          <li>
+            <Link to="/all-collections">Shop</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </NavItems>
         <Brand>
           {hasItems && <CartCounter>{quantity}</CartCounter>}
           <img src={CartIcon} alt="Shopping cart icon" />

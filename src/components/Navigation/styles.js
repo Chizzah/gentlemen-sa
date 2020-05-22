@@ -4,6 +4,7 @@ export const Wrapper = styled.header`
   width: 100%;
   height: 10vh;
   background-color: var(--primary);
+  color: var(--secondary);
 `
 
 export const Container = styled.nav`
@@ -19,6 +20,17 @@ export const Brand = styled.h2`
   color: var(--brand);
 `
 
+export const NavItems = styled.ul`
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+
+  & > li {
+    margin: 0 1rem;
+  }
+`
 export const MenuLink = styled.div`
   color: white;
   text-decoration: none;
