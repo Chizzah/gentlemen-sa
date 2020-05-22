@@ -1,10 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'gatsby'
 import reduce from 'lodash/reduce'
 import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
-import { Wrapper, Container, Brand, NavItems, CartCounter } from './styles'
+import {
+  Wrapper,
+  Container,
+  Brand,
+  NavItems,
+  CartCounter,
+  MenuIcon,
+  MobileItems,
+} from './styles'
 import CartIcon from '../../../resources/icons/cart.svg'
 
 const useQuantity = () => {
@@ -18,33 +26,59 @@ const useQuantity = () => {
 
 const Navigation = ({ siteTitle }) => {
   const [hasItems, quantity] = useQuantity()
+  const [open, setOpen] = useState(false)
 
   return (
-    <Wrapper>
-      <Container>
-        <Brand>
-          <Link to="/">{siteTitle}</Link>
-        </Brand>
-        <NavItems>
+    <>
+      <Wrapper>
+        <Container>
+          <MenuIcon open={open} onClick={() => setOpen(!open)}>
+            <div />
+            <div />
+            <div />
+          </MenuIcon>
+          <Brand>
+            <Link to="/">{siteTitle}</Link>
+          </Brand>
+          <NavItems>
+            <li>
+              <Link to="/all-collections">Shop</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </NavItems>
+          <Brand>
+            <Link to="/cart">
+              {hasItems && <CartCounter>{quantity}</CartCounter>}
+              <img src={CartIcon} alt="Shopping cart icon" />
+            </Link>
+          </Brand>
+        </Container>
+      </Wrapper>
+      <MobileItems open={open}>
+        <ul>
           <li>
-            <Link to="/all-collections">Shop</Link>
+            <Link onClick={() => setOpen(!open)} to="/all-collections">
+              Shop
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link onClick={() => setOpen(!open)} to="/about">
+              About
+            </Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link onClick={() => setOpen(!open)} to="/contact">
+              Contact
+            </Link>
           </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </NavItems>
-        <Brand>
-          {hasItems && <CartCounter>{quantity}</CartCounter>}
-          <img src={CartIcon} alt="Shopping cart icon" />
-        </Brand>
-      </Container>
-    </Wrapper>
+        </ul>
+      </MobileItems>
+    </>
   )
 }
 
