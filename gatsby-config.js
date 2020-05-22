@@ -1,7 +1,7 @@
 const path = require('path')
 
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
@@ -37,8 +37,8 @@ module.exports = {
     {
       resolve: `gatsby-source-shopify`,
       options: {
-        shopName: process.env.SHOPIFY_SHOP_NAME,
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+        shopName: process.env.GATSBY_SHOPIFY_SHOP_NAME,
+        accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
         apiVersion: `2020-04`,
         verbose: true,
         paginationSize: 50,
@@ -48,8 +48,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-brotli',
       options: {
-        extensions: ['html', 'css', 'js', 'svg']
-      }
+        extensions: ['html', 'css', 'js', 'svg'],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
