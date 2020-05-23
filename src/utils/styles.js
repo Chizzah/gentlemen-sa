@@ -187,3 +187,30 @@ export const CartTitle = styled.h1`
   font-size: 2.5rem;
   font-weight: 600;
 `
+
+export const FlexView = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`
+
+export const Address = styled.address`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  & > ul > li {
+    margin: 1rem 0;
+  }
+
+  & > ul > li > span {
+    display: flex;
+  }
+`

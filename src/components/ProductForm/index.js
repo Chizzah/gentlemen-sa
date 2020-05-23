@@ -4,6 +4,14 @@ import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
+import {
+  StyledPrice,
+  StyledLabel,
+  StyledSelect,
+  QuantityWrapper,
+  QuantityContainer,
+  AddToCart,
+} from './styles'
 
 const ProductForm = ({ product }) => {
   const {
@@ -97,11 +105,11 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <h3>{price}</h3>
+      <StyledPrice>{price}</StyledPrice>
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
-          <label htmlFor={name}>{name} </label>
-          <select
+          <StyledLabel htmlFor={name}>{name} </StyledLabel>
+          <StyledSelect
             name={name}
             key={id}
             onChange={event => handleOptionChange(index, event)}
@@ -115,29 +123,33 @@ const ProductForm = ({ product }) => {
                 {value}
               </option>
             ))}
-          </select>
+          </StyledSelect>
           <br />
         </React.Fragment>
       ))}
-      <label htmlFor="quantity">Quantity </label>
-      <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
-      />
-      <br />
-      <button
-        type="submit"
-        disabled={!available || adding}
-        onClick={handleAddToCart}
-      >
-        Add to Cart
-      </button>
-      {!available && <p>This Product is out of Stock!</p>}
+      <QuantityWrapper>
+        <StyledLabel htmlFor="quantity">Quantity </StyledLabel>
+        <QuantityContainer>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            step="1"
+            onChange={handleQuantityChange}
+            value={quantity}
+          />
+          <br />
+          <AddToCart
+            type="submit"
+            disabled={!available || adding}
+            onClick={handleAddToCart}
+          >
+            Add to Cart
+          </AddToCart>
+        </QuantityContainer>
+        {!available && <p>This Product is out of Stock!</p>}
+      </QuantityWrapper>
     </>
   )
 }

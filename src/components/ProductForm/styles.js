@@ -1,7 +1,7 @@
 import { styled } from 'linaria/react'
 
 export const StyledPrice = styled.h3`
-  margin-top: 2rem;
+  margin: 3rem 0;
   font-size: 1.5rem;
   font-weight: 600;
 `
@@ -25,39 +25,46 @@ export const StyledSelect = styled.select`
   }
 `
 
-export const Holder = styled.div`
+export const QuantityWrapper = styled.section`
   display: flex;
   margin-top: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  & > p {
+    margin: 1rem 0;
+  }
 `
 
-export const MiniHolder = styled.div`
+export const QuantityContainer = styled.div`
+  margin-top: 0.5rem;
   width: 24rem;
-  height: 2.5rem;
+  height: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
-    & > input {
-      display: inline-block;
-      width: 70%;
-      height: 100%;
-      border: 1px solid #999;
+  & > input {
+    display: inline-block;
+    padding: 0.5rem;
+    width: 70%;
+    height: 100%;
+    border: 1px solid #999;
+    border-radius: 6px 0 0 6px;
 
-      &:focus {
-        outline: none;
-      }
+    &:focus {
+      outline: none;
     }
+  }
 
   @media (max-width: 576px) {
     width: 16rem;
   }
 `
 
-export const Button = styled.button`
+export const AddToCart = styled.button`
   width: 30%;
   height: 100%;
   background-color: #000;
@@ -70,6 +77,7 @@ export const Button = styled.button`
   display: inline-block;
   transition: all 0.3s ease 0s;
   cursor: pointer;
+  border-radius: 0 6px 6px 0;
 
   &:hover {
     background-color: #333;

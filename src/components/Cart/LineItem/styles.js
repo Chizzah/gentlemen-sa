@@ -23,6 +23,7 @@ export const InnerWrapper = styled.div`
 
   & > p {
     padding: 0.5rem 0;
+    text-align: center;
   }
 `
 

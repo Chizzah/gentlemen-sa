@@ -1,12 +1,60 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+import Image from 'gatsby-image'
 
-import { Container } from '~/utils/styles'
+import { Container, FlexView, Address } from '~/utils/styles'
+import ContactForm from '~/components/ContactForm'
 
-const ContactPage = () => (
+const ContactPage = ({ data }) => (
   <Container>
-    <h1>Contact Us</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur in massa eu tempus. Sed quis justo eget nibh ultrices eleifend sed eu nibh. Suspendisse potenti. Aliquam vehicula massa non luctus aliquam. Cras non blandit nisl, non consequat urna. Ut ex lorem, aliquam ac tempus sodales, suscipit vel nisi. Suspendisse semper erat risus, vel vehicula purus sodales id. Proin quam urna, bibendum vel facilisis in, lobortis ut ex. Phasellus gravida nibh dolor, eget tempor dui tincidunt vel. Maecenas eu tincidunt odio, vitae commodo lorem. Integer enim nulla, pulvinar et fermentum eu, dignissim sit amet quam. Sed ultricies nec risus nec ultrices. Suspendisse scelerisque lacus eget ligula efficitur, vitae interdum lectus elementum. Mauris pellentesque sagittis pretium. Suspendisse lacinia augue non volutpat accumsan. Quisque mauris magna, bibendum ac nibh varius, semper auctor dui.</p>
+    <FlexView>
+      <Address>
+        <h2>Contact Us</h2>
+        <ul>
+          <li>
+            <strong>Address:</strong> 010 Victoria Street, Oudtshoorn, 6625
+          </li>
+          <li>
+            <strong>Phone:</strong> 060 402 3605
+          </li>
+          <li>
+            <span>
+              <div>
+                <strong>Hours:</strong>
+              </div>
+              <div>
+                {' '}
+                Monday 8am-6pm <br /> Tuesday 8am-6pm <br /> Wednesday 8am-6pm{' '}
+                <br /> Thursday 8am-6pm <br /> Friday 8am-6pm <br /> Saturday
+                9am-12pm <br /> Sunday Closed
+              </div>
+            </span>
+          </li>
+        </ul>
+      </Address>
+      <div>
+        <a
+          href="https://www.google.com/maps/place/10+Victoria+St,+Oudtshoorn,+6620/@-33.58126,22.2135513,17z/data=!3m1!4b1!4m13!1m7!3m6!1s0x1dd5c18cc16f1461:0x5ed969953cc575c6!2s10+Victoria+St,+Oudtshoorn,+6620!3b1!8m2!3d-33.5809611!4d22.2132098!3m4!1s0x1dd5c1f34144b999:0x6fa8322beb691b79!8m2!3d-33.58126!4d22.21574"
+          target="_blank"
+        >
+          <Image fixed={data.googleMaps.childImageSharp.fixed} />
+        </a>
+      </div>
+    </FlexView>
+    <ContactForm />
   </Container>
 )
+
+export const query = graphql`
+  query {
+    googleMaps: file(name: { eq: "google-maps" }) {
+      childImageSharp {
+        fixed(width: 350) {
+          ...GatsbyImageSharpFixed_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`
 
 export default ContactPage
