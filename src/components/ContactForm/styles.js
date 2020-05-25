@@ -87,4 +87,8 @@ export const Form = styled.form`
       outline: none;
     }
   }
+
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 `

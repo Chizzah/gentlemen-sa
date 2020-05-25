@@ -192,6 +192,10 @@ export const FlexView = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
 `
 
 export const Address = styled.address`
@@ -213,4 +217,12 @@ export const Address = styled.address`
   & > ul > li > span {
     display: flex;
   }
+`
+
+export const AboutTitle = styled.h1`
+  margin: 1rem;
+`
+
+export const AboutText = styled.p`
+  margin: 1rem;
 `
