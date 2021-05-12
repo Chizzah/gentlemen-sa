@@ -37,7 +37,7 @@
     "scroll-out": "^2.2.8",
     "set-value": "^2.0.1",
     "shopify-buy": "^2.8.0",
-    "swiper": "^5.4.0"
+    "swiper": "^6.5.1"
   },
   "keywords": [
     "gatsby",
