@@ -35,7 +35,7 @@
     "react-helmet": "^5.2.1",
     "react-id-swiper": "^3.0.0",
     "scroll-out": "^2.2.8",
-    "set-value": "^2.0.1",
+    "set-value": "^4.0.1",
     "shopify-buy": "^2.8.0",
     "swiper": "^5.4.0"
   },
